@@ -23,7 +23,7 @@ export default NextAuth({
     async session({ session }) {
       try {
         const userActiveSubscription = await fauna.query(
-          q.Paginate(
+          q.Get(
             q.Intersection([
               q.Match(
                 q.Index('subscription_by_user_ref'),
@@ -37,13 +37,13 @@ export default NextAuth({
                   )
                 )
               ),
-              
+              q.Match(
+                q.Index('subscription_by_status'), "active"
+              )
             ])
           )
         )
                   
-                
-        console.log(userActiveSubscription)
         return {
           ...session,
           activeSubscription: userActiveSubscription,

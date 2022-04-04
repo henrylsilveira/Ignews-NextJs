@@ -21,8 +21,6 @@ export default function PostPreview({ post }: PostPreviewProps) {
     const {data: session} = useSession();
     const router = useRouter()
 
-    console.log(`Preview + ${session}`)
-
     useEffect(() => {
       if (session?.activeSubscription) {
         router.push(`/posts/${post.slug}`)
@@ -48,7 +46,7 @@ export default function PostPreview({ post }: PostPreviewProps) {
     )
 }
 
-export const getStaticPaths: GetStaticPaths = () => {
+export const getStaticPaths: GetStaticPaths = async () => {
     return {
         paths: [],
         fallback: 'blocking'
@@ -56,7 +54,7 @@ export const getStaticPaths: GetStaticPaths = () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-    const { slug } = params!;
+    const { slug } = params;
 
     const prismic = getPrismicClient()
 
@@ -80,6 +78,5 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
             post,
         },
         redirect: 60 * 30 // 30 Minutos
-
     }
 }
