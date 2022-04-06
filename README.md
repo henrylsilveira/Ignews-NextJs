@@ -1,6 +1,4 @@
-<h1 align="center">
-
-<img src="https://raw.githubusercontent.com/khalleb/ignews/main/public/images/avatar.svg" alt="rocketshoes" width="100px"/>
+<h1 align="center"
 
 </h1>
 
@@ -9,6 +7,7 @@
   <br>
   <br>
 
+<<<<<<< HEAD
 ---
 
 <p align="center">
@@ -21,6 +20,8 @@
 
 <br>
 
+=======
+>>>>>>> 63f0c42cffe421b9e860c56a566c96301603cf61
 ## :dart: Sobre ##
 
 O projeto ig.news é um blog onde os usuários podem ter acesso ao conteúdo de cada postagem de acordo com o status de sua assinatura.<br>
@@ -61,3 +62,7 @@ $ yarn install
 $ yarn dev
 # The server will initialize in the <http://localhost:3000>
 ```
+<<<<<<< HEAD
+=======
+
+>>>>>>> 63f0c42cffe421b9e860c56a566c96301603cf61
