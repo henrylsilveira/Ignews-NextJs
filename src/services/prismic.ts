@@ -1,5 +1,4 @@
 import Prismic from '@prismicio/client'
-import { read } from 'fs'
 
 export function getPrismicClient(req?: unknown){
     const prismic = Prismic.client(
